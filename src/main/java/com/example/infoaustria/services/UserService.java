@@ -1,38 +1,27 @@
 package com.example.infoaustria.services;
 
-import com.example.infoaustria.entities.User;
-import org.springframework.context.annotation.Scope;
+import com.example.infoaustria.entities.*;
 import org.springframework.data.domain.Sort;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-@Scope("prototype")
-public class UserService implements UserDeclaration {
+///////////////////////////////// User CRUD ///////////////////////////////////
 
-    @Override
-    public User findUserByLoginAndPassword(String login, String password) {
-        return null;
-    }
+public interface UserService {
 
-    @Override
-    public User findUserByUuid(String uuid) {
-        return null;
-    }
+    User createUser(User user);
 
-    @Override
-    public User findUserById(long id) {
-        return null;
-    }
+    User updateUser(User user);
 
-    @Override
-    public List<User> findAllUser() {
-        return null;
-    }
+    void deleteUserById(long id);
 
-    @Override
-    public List<User> findAllUser(Sort sort) {
-        return null;
-    }
+    User getUserById(long id);
+
+    User getUserByUuid(String uuid);
+
+    User findUserByLogin(String login);
+
+    List<User> findAllUsers();
+
+    List<User> findAllUsers(Sort sort);
 }
