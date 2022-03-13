@@ -19,6 +19,7 @@ public class FinanceRate {
     @Column(unique = true)
     private String uuid;
 
+    private String incomeLevel;
     private int minIncome;
     private int maxIncome;
     private int rate;
@@ -30,6 +31,7 @@ public class FinanceRate {
     public FinanceRate(FinanceRate fr) {
         this.id = fr.id;
         this.uuid = fr.uuid;
+        this.incomeLevel =fr.incomeLevel;
         this.minIncome = fr.minIncome;
         this.maxIncome = fr.maxIncome;
         this.rate = fr.rate;
